@@ -11,7 +11,7 @@ bool found(int a[], int t, int l){
 }
 
 int main(){
-    int num, temp, dup=0, pt=1;
+    int num, temp, pt=1;
     cin >> num;
 
     const int LEN = num;
@@ -20,15 +20,13 @@ int main(){
     cin >> nums[0];
     for (int i = 1; i < LEN; i++){
         cin >> temp;
-        if (found(nums, temp, i))
-            dup++;
-        else {
+        if (!found(nums, temp, i)){
             nums[pt] = temp;
             pt++;
         }
     }
 
-    cout << dup << endl;
+    cout << pt << endl;
     for (int i = 0; i < pt; i++)
         cout << nums[i] << ' ';
     cout << endl;
